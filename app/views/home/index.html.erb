@@ -1,0 +1,44 @@
+
+<h2> To post text on your wall please click this button </h2>
+	<div id="fb-root" />
+</div>
+   <script> 
+   function fun(){
+	     FB.init({ 
+         appId  : '158722860929735', 
+         status : true, // check login status 
+         cookie : true, // enable cookies to allow the server to access the session 
+         xfbml  : true  // parse XFBML 
+         });  
+		   FB.ui(
+  {
+   method: 'feed',
+   message: 'getting educated about Facebook Connect',
+   name: 'Connect',
+   caption: 'The Facebook Connect JavaScript SDK',
+      description: (
+      'A small JavaScript library that allows you to harness ' +
+      'the power of Facebook, bringing the user\'s identity, ' +
+      'social graph and distribution power to your site.'
+   ),
+   link: 'http://www.fbrell.com/',
+   picture: 'http://www.fbrell.com/f8.jpg',
+   actions: [
+        { name: 'fbrell', link: 'http://localhost:3000/' }
+   ],
+  user_message_prompt: 'Share your thoughts about RELL'
+  },
+  function(response) {
+    if (response && response.post_id) {
+      alert('Post was published.');
+    } else {
+      alert('Post was not published.');
+    }
+  }
+);
+}
+			
+
+
+</script>
+<button type = "submit " name ="connect" onclick = "fun();">
